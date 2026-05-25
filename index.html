@@ -18,7 +18,6 @@
             align-items: center;
             min-height: 100vh;
         }
-        /* Classic DOS Blue Window */
         .dos-window {
             background-color: #0000aa;
             color: #ffffff;
@@ -40,9 +39,8 @@
         .header-text {
             text-align: center;
             margin-bottom: 30px;
-            color: #55ffff; /* Cyan */
+            color: #55ffff;
         }
-        /* The buttons */
         .btn-container {
             text-align: center;
             margin: 30px 0;
@@ -65,10 +63,9 @@
             cursor: pointer;
             border-color: #55ffff;
         }
-        /* Simulated Console Box */
         .console-box {
             background-color: #000000;
-            color: #00aa00; /* DOS Green */
+            color: #00aa00;
             padding: 15px;
             border: 2px solid #555555;
             text-align: left;
@@ -79,8 +76,6 @@
         }
         .red { color: #ff5555; }
         .white { color: #ffffff; }
-        
-        /* Blinking Cursor Animation */
         .cursor {
             animation: blinker 1s linear infinite;
             background-color: #00aa00;
@@ -106,8 +101,8 @@
         <p>Fake Drive Catcher bypasses the Windows Operating System file cache to interact directly with the raw silicon of your USB drive. It performs spot-checks across the drive's claimed capacity to detect fraudulent, modified pendrives that loop their storage.</p>
         
         <div class="btn-container">
-            <a href="https://github.com/parmishh/FakeDriveCatcher/blob/main/FakeDriveCatcher.exe?raw=true" class="btn">[ DOWNLOAD .EXE ]</a>
-            <a href="https://github.com/parmishh/FakeDriveCatcher" class="btn">[ VIEW SOURCE ON GITHUB ]</a>
+            <button onclick="downloadExe()" class="btn">[ DOWNLOAD .EXE ]</button>
+            <a href="https://github.com/parmishh/FakeDriveCatcher" class="btn">[ VIEW SOURCE ]</a>
         </div>
 
         <div class="console-box"><span class="white">C:\></span> FakeDriveCatcher.exe
@@ -126,5 +121,20 @@ Unlocking drive...
 <span class="white">C:\></span><span class="cursor">_</span></div>
     </div>
 
+    <script>
+        function downloadExe() {
+
+            const GITHUB_RAW_URL = "https://raw.githubusercontent.com/parmishh/FakeDriveCatcher/main/FakeDriveCatcher.exe";
+            
+            const link = document.createElement('a');
+            link.href = GITHUB_RAW_URL;
+   
+            link.download = "FakeDriveCatcher.exe"; 
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
