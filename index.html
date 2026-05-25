@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Drive Catcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #aaaaaa;
+            font-family: 'VT323', monospace;
+            font-size: 22px;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Classic DOS Blue Window */
+        .dos-window {
+            background-color: #0000aa;
+            color: #ffffff;
+            border: 4px double #ffffff;
+            padding: 2px 20px 20px 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 10px 10px 0px #000000;
+        }
+        .title-bar {
+            text-align: center;
+            background-color: #ffffff;
+            color: #0000aa;
+            margin: 0px -20px 20px -20px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .header-text {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #55ffff; /* Cyan */
+        }
+        /* The buttons */
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #00aaaa; 
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 10px;
+            border: 2px solid #ffffff;
+            font-weight: bold;
+            font-size: 24px;
+            transition: all 0.1s;
+        }
+        .btn:hover {
+            background-color: #ffffff;
+            color: #0000aa;
+            cursor: pointer;
+            border-color: #55ffff;
+        }
+        /* Simulated Console Box */
+        .console-box {
+            background-color: #000000;
+            color: #00aa00; /* DOS Green */
+            padding: 15px;
+            border: 2px solid #555555;
+            text-align: left;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+        .red { color: #ff5555; }
+        .white { color: #ffffff; }
+        
+        /* Blinking Cursor Animation */
+        .cursor {
+            animation: blinker 1s linear infinite;
+            background-color: #00aa00;
+            color: #000000;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dos-window">
+        <div class="title-bar"> FAKE DRIVE CATCHER v1.0 </div>
+        
+        <div class="header-text">
+            ===========================================<br>
+            HARDWARE-LEVEL USB CAPACITY VERIFICATION<br>
+            ===========================================
+        </div>
+
+        <p>A lightweight, bare-metal utility written in C++.</p>
+        <p>Fake Drive Catcher bypasses the Windows Operating System file cache to interact directly with the raw silicon of your USB drive. It performs spot-checks across the drive's claimed capacity to detect fraudulent, modified pendrives that loop their storage.</p>
+        
+        <div class="btn-container">
+            <a href="https://github.com/parmishh/FakeDriveCatcher/blob/main/FakeDriveCatcher.exe" class="btn">[ DOWNLOAD .EXE ]</a>
+            <a href="https://github.com/parmishh/FakeDriveCatcher" class="btn">[ VIEW SOURCE ON GITHUB ]</a>
+        </div>
+
+        <div class="console-box"><span class="white">C:\></span> FakeDriveCatcher.exe
+
+Opening drive D: bypassing OS cache...
+Locking volume to prevent OS interference...
+Claimed Drive Capacity: 2000 GB
+
+<span class="white">--- DRIVE HEALTH MAP ---</span>
+<span style="background-color:#00aa00; color:black">  </span><span style="background-color:#00aa00; color:black">  </span><span style="background-color:#00aa00; color:black">  </span><span style="background-color:#00aa00; color:black">  </span><span style="background-color:#00aa00; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span>
+<span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span><span style="background-color:#ff5555; color:black">  </span>
+
+<span class="red">[-] FAKE DETECTED! Real capacity is likely only ~32 GB.</span>
+Unlocking drive...
+
+<span class="white">C:\></span><span class="cursor">_</span></div>
+    </div>
+
+</body>
+</html>
